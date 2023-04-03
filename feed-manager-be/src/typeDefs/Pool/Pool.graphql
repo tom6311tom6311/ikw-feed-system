@@ -1,0 +1,13 @@
+type Pool {
+  poolId: String!
+  poolName: String!
+  status: PoolStatus!
+  capacity: Float
+  speciesList: [String!]!
+  imageUrl: String!
+}
+
+enum PoolStatus {
+  ACTIVE
+  INACTIVE
+}

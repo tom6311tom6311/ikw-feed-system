@@ -1,0 +1,93 @@
+import { User, Site, Pool, SiteStatus, SiteValidationStatus, PoolStatus } from "../src/generated/graphql";
+
+type MockData = {
+  users: {
+    [key: string]: User;
+  }
+  userCredentials: {
+    [key: string]: string;
+  }
+  sites: {
+    [key: string]: Site;
+  },
+  pools: {
+    [key: string]: Pool;
+  },
+};
+
+const users = {
+  'truth@iknowwater.com': {
+    email: 'truth@iknowwater.com',
+    nameEng: 'iKnowWater',
+    nameChin: '愛諾華特',
+  },
+};
+
+const userCredentials = {
+  'truth@iknowwater.com': 'Siras@6868',
+};
+
+const pools = {
+  YGDS__1: {
+    poolId: 'YGDS__1',
+    poolName: '水池1',
+    status: PoolStatus.Active,
+    capacity: 999,
+    speciesList: ['加州鱸'],
+    imageUrl: '/snapshot/YGDS__1'
+  },
+  YGDS__2: {
+    poolId: 'YGDS__2',
+    poolName: '水池2',
+    status: PoolStatus.Active,
+    capacity: 999,
+    speciesList: ['加州鱸'],
+    imageUrl: '/snapshot/YGDS__2'
+  },
+  YGDS__3: {
+    poolId: 'YGDS__3',
+    poolName: '水池3',
+    status: PoolStatus.Active,
+    capacity: 999,
+    speciesList: ['加州鱸'],
+    imageUrl: '/snapshot/YGDS__3'
+  },
+  YGDS__4: {
+    poolId: 'YGDS__4',
+    poolName: '水池4',
+    status: PoolStatus.Active,
+    capacity: 999,
+    speciesList: ['加州鱸'],
+    imageUrl: '/snapshot/YGDS__4'
+  },
+};
+
+const mockData: MockData = {
+  users,
+  userCredentials,
+  sites: {
+    YGDS: {
+      siteId: 'YGDS',
+      status: SiteStatus.Active,
+      nameEng: 'YingGeDemoSite',
+      nameChin: '鶯歌Demo場',
+      licenseNum: '20220002',
+      validationStatus: SiteValidationStatus.Passed,
+      pools: [pools['YGDS__1']],
+      owners: [users['truth@iknowwater.com']],
+      addressEng: 'No. 43, Yongji St., Yingge Dist., New Taipei City',
+      addressChin: '新北市鶯歌區永吉街43號',
+      telCompany: '02-8972-5569',
+      telMobile: '0952989201',
+      telHouse: 'NA',
+      companyNameEng: 'iKnowWater',
+      companyNameChin: '愛諾華特',
+      email: 'truth@iknowwater.com',
+      county: '新北市',
+      district: '鶯歌區',
+    },
+  },
+  pools,
+};
+
+export default mockData;

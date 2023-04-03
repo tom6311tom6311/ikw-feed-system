@@ -1,0 +1,5 @@
+type Query {
+  site(siteId: ID!): Site
+  sites: [Site!]!
+  pool(poolId: ID!): Pool
+}
