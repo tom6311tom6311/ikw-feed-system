@@ -1,5 +1,5 @@
 # build process
-FROM node AS build-deps
+FROM node:18-alpine AS build-deps
 WORKDIR /app
 COPY package.json yarn.lock ./
 RUN yarn
