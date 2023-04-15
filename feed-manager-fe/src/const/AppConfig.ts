@@ -1,4 +1,4 @@
-const BACKEND_PORT = process.env.REACT_APP_BACKEND_PORT ?? 14001;
+const BACKEND_PORT = process.env.REACT_APP_BACKEND_PORT ?? 14003;
 const BACKEND_URL = `http://${window.location.hostname}:${BACKEND_PORT}`;
 
 const AppConfig = {
@@ -8,7 +8,7 @@ const AppConfig = {
     GQL_URL: `${BACKEND_URL}/graphql`,
   },
   TIMING: {
-    IMG_REFRESH_PERIOD: 30000, // ms
+    IMG_REFRESH_PERIOD: 15000, // ms
   },
 };
 

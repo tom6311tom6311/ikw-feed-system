@@ -14,9 +14,9 @@ services:
     build:
       context: ./feed-manager-fe
     environment:
-      REACT_APP_BACKEND_PORT: 14001
+      REACT_APP_BACKEND_PORT: 14003
     ports:
-      - 3080:80
+      - 3082:80
     networks:
         - main
   feed-manager-be:
@@ -29,7 +29,7 @@ services:
     environment:
       JWT_SECRET: $JWT_SECRET
     ports:
-      - 14001:4000
+      - 14003:4000
     networks:
         - main
 networks:
