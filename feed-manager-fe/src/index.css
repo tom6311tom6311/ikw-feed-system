@@ -764,7 +764,6 @@ select {
 .is-sidebar-on .o-tabheader,
 .is-sidebar-on .o-sitecamera__view {
   width: 75vw;
-  float: right;
 }
 
 .is-sidebar-on .c-page-divider {
@@ -1038,8 +1037,6 @@ select {
 }
 
 .o-sitecamera__view {
-  width: 100vw;
-  float: right;
   text-align: center;
   padding: 30px 40px;
 }
