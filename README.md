@@ -28,14 +28,14 @@ Feed managing system
 
 ### If you want to develop front-end only
 
-1. Edit the frontend app configuration file (`siras-manager-fe/src/const/AppConfig.ts`) to point BACKEND URL to the ever-running server:
+1. Edit the frontend app configuration file (`feed-manager-fe/src/const/AppConfig.ts`) to point BACKEND URL to the ever-running server:
 
     - Please ask the team members for the backend server URL
 
 2. Open a terminal and run the frontend app
 
     ```bash
-    cd siras-manager-fe/
+    cd feed-manager-fe/
     yarn
     yarn start
     ```
@@ -45,7 +45,7 @@ Feed managing system
 1. Open a terminal and run the backend app
 
     ```bash
-    cd siras-manager-be/
+    cd feed-manager-be/
     yarn
     JWT_SECRET="XXX" yarn dev
     ```
@@ -53,7 +53,7 @@ Feed managing system
 2. Open another terminal and run the frontend app
 
     ```bash
-    cd siras-manager-fe/
+    cd feed-manager-fe/
     yarn
     REACT_APP_BACKEND_PORT=4000 yarn start
     ```
@@ -82,7 +82,7 @@ Feed managing system
 2. Open a terminal and run the backend app
 
     ```bash
-    cd siras-manager-be/
+    cd feed-manager-be/
     yarn
     JWT_SECRET="XXX" yarn dev
     ```
@@ -90,31 +90,31 @@ Feed managing system
 3. Open another terminal and run the following command to generate typescript definitions based on gql schema
 
     ```bash
-    cd siras-manager-be/
+    cd feed-manager-be/
     yarn gen
     ```
 
 4. Commit the schema changes
 
     ```bash
-    cd siras-manager-be/
+    cd feed-manager-be/
     git add src/typeDefs/ src/generated/
     git commit -sm "feat: impl gql schema for xxx"
     ```
 
-5. Implement the corresponding resolvers (under `siras-manager-be/src/resolvers/`) and commit changes
+5. Implement the corresponding resolvers (under `feed-manager-be/src/resolvers/`) and commit changes
 
 6. Run the following command to update typescript definitions for the front end project (note that the backend server should be running in another terminal)
 
     ```bash
-    cd siras-manager-fe/
+    cd feed-manager-fe/
     yarn gen
     ```
 
 7. Commit the frontend type definition changes
 
     ```bash
-    cd siras-manager-fe/
+    cd feed-manager-fe/
     git add src/types.ts
     git commit -sm "chore: update fe type defs"
     ```
