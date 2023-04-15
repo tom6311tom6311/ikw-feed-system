@@ -1,12 +1,12 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
 import { PoolStatus } from '../../types';
-import cameraSample from '../../img/camera_sample.png';
 
 type PoolOverviewProps = {
   poolName: string;
   status: PoolStatus;
   link: string;
+  imageUrl: string;
 }
 
 export default function PoolOverview(props: PoolOverviewProps) {
@@ -14,6 +14,7 @@ export default function PoolOverview(props: PoolOverviewProps) {
     poolName,
     status,
     link,
+    imageUrl,
   } = props;
   return (
     <div className="o-siteoverview">
@@ -32,7 +33,7 @@ export default function PoolOverview(props: PoolOverviewProps) {
           <p className="c-siteoverview-info__value">{status}</p>
         </div>
         <div className="o-sitecamera__view">
-          <img src={cameraSample} alt="realtime camera view" className="c-sitecamera-img" />
+          <img src={imageUrl} alt="realtime camera view" className="c-sitecamera-img" />
         </div>
       </div>
     </div>

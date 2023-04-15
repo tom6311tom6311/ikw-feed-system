@@ -21,9 +21,9 @@ async function main() {
   app.use('/graphql', graphQLServer);
 
   // serve static files
-  app.get('/snapshot/:cameraId', (req, res) => {
-    const { cameraId } = req.params;
-    const snapshotFilePath = path.join(__dirname, `../snapshots/camera_${cameraId}.jpg`);
+  app.get('/snapshot/:siteId/:poolId', (req, res) => {
+    const { siteId, poolId } = req.params;
+    const snapshotFilePath = path.join(__dirname, `../snapshots/camera__${siteId}__${poolId}.jpg`);
 
     if (fs.existsSync(snapshotFilePath)) {
       res.sendFile(snapshotFilePath);

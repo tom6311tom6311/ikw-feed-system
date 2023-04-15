@@ -161,7 +161,6 @@ select {
   margin-top: 80px;
   margin-bottom: 0;
   width: calc(100% - 40px);
-  height: 653px;
   border-radius: 3px;
 }
 
@@ -1042,7 +1041,7 @@ select {
 }
 
 .c-sitecamera-img {
-  max-width: 100%;
+  max-width: 90%;
 }
 
 .c-tabheader-breadcrumb                                                                                                                                                                                                                                                                                 {

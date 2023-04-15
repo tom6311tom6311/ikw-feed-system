@@ -8,7 +8,7 @@ export type GetSiteQueryVariables = Types.Exact<{
 }>;
 
 
-export type GetSiteQuery = { __typename?: 'Query', site?: { __typename?: 'Site', siteId: string, status: Types.SiteStatus, nameChin: string, pools: Array<{ __typename?: 'Pool', poolId: string, poolName: string, status: Types.PoolStatus, imageUrl: string }> } | null };
+export type GetSiteQuery = { __typename?: 'Query', site?: { __typename?: 'Site', siteId: string, status: Types.SiteStatus, nameChin: string, pools: Array<{ __typename?: 'Pool', poolId: string, poolName: string, status: Types.PoolStatus }> } | null };
 
 
 export const GetSiteDocument = gql`
@@ -21,7 +21,6 @@ export const GetSiteDocument = gql`
       poolId
       poolName
       status
-      imageUrl
     }
   }
 }

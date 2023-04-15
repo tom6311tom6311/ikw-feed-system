@@ -27,7 +27,6 @@ export type MutationLoginArgs = {
 export type Pool = {
   __typename?: 'Pool';
   capacity?: Maybe<Scalars['Float']>;
-  imageUrl: Scalars['String'];
   poolId: Scalars['String'];
   poolName: Scalars['String'];
   speciesList: Array<Scalars['String']>;

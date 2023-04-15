@@ -34,7 +34,6 @@ const pools = {
     status: PoolStatus.Active,
     capacity: 999,
     speciesList: ['加州鱸'],
-    imageUrl: '/snapshot/YGDS__1'
   },
   YGDS__2: {
     poolId: 'YGDS__2',
@@ -42,7 +41,6 @@ const pools = {
     status: PoolStatus.Active,
     capacity: 999,
     speciesList: ['加州鱸'],
-    imageUrl: '/snapshot/YGDS__2'
   },
   YGDS__3: {
     poolId: 'YGDS__3',
@@ -50,7 +48,6 @@ const pools = {
     status: PoolStatus.Active,
     capacity: 999,
     speciesList: ['加州鱸'],
-    imageUrl: '/snapshot/YGDS__3'
   },
   YGDS__4: {
     poolId: 'YGDS__4',
@@ -58,7 +55,6 @@ const pools = {
     status: PoolStatus.Active,
     capacity: 999,
     speciesList: ['加州鱸'],
-    imageUrl: '/snapshot/YGDS__4'
   },
 };
 
@@ -73,7 +69,7 @@ const mockData: MockData = {
       nameChin: '鶯歌Demo場',
       licenseNum: '20220002',
       validationStatus: SiteValidationStatus.Passed,
-      pools: [pools['YGDS__1']],
+      pools: [pools['YGDS__1'], pools['YGDS__2'], pools['YGDS__3'], pools['YGDS__4']],
       owners: [users['truth@iknowwater.com']],
       addressEng: 'No. 43, Yongji St., Yingge Dist., New Taipei City',
       addressChin: '新北市鶯歌區永吉街43號',

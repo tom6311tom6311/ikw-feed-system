@@ -1,5 +1,6 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
+import AppConfig from '../../const/AppConfig';
 import { useGetSiteQuery } from './GetSiteQuery.graphql.generated';
 import PoolOverview from '../../components/PoolOverview/PoolOverview';
 
@@ -17,6 +18,7 @@ function SiteStatusPage() {
           poolName={poolName}
           status={status}
           link={`/site/${siteId}/pool/${poolId}`}
+          imageUrl={`${AppConfig.BACKEND.URL}/snapshot/${siteId}/${poolId}`}
         />
       ))}
     </div>

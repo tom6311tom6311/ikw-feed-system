@@ -4,7 +4,6 @@ type Pool {
   status: PoolStatus!
   capacity: Float
   speciesList: [String!]!
-  imageUrl: String!
 }
 
 enum PoolStatus {

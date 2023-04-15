@@ -10,7 +10,6 @@ const GetSiteQuery = gql`
         poolId
         poolName
         status
-        imageUrl
       }
     }
   }

@@ -8,7 +8,6 @@ const GetPoolQuery = gql`
       status
       capacity
       speciesList
-      imageUrl
     }
   }
 `;

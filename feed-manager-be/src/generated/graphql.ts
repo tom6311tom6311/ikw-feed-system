@@ -29,7 +29,6 @@ export type MutationLoginArgs = {
 export type Pool = {
   __typename?: 'Pool';
   capacity?: Maybe<Scalars['Float']>;
-  imageUrl: Scalars['String'];
   poolId: Scalars['String'];
   poolName: Scalars['String'];
   speciesList: Array<Scalars['String']>;
@@ -202,7 +201,6 @@ export type MutationResolvers<ContextType = any, ParentType extends ResolversPar
 
 export type PoolResolvers<ContextType = any, ParentType extends ResolversParentTypes['Pool'] = ResolversParentTypes['Pool']> = {
   capacity?: Resolver<Maybe<ResolversTypes['Float']>, ParentType, ContextType>;
-  imageUrl?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   poolId?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   poolName?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   speciesList?: Resolver<Array<ResolversTypes['String']>, ParentType, ContextType>;
