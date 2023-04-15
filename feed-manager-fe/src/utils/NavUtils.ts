@@ -30,35 +30,20 @@ const renderMenuContent = (
     ];
   }
 
-  if (siteId) {
-    const siteIds = navHierarchy.map(({ siteId: stId }) => stId) || [];
-    const siteItems = siteIds
-      .map((stId) => ({
-        level: 1,
-        text: stId,
-        link: `/site/${stId}/`,
-      }));
-    return [
-      {
-        level: 0,
-        text: '案場',
-        link: '/',
-      },
-      ...siteItems,
-      {
-        level: 0,
-        text: '登出',
-        onClick: logout,
-      },
-    ];
-  }
-
+  const siteIds = navHierarchy.map(({ siteId: stId }) => stId) || [];
+  const siteItems = siteIds
+    .map((stId) => ({
+      level: 1,
+      text: stId,
+      link: `/site/${stId}/`,
+    }));
   return [
     {
       level: 0,
-      text: '案場',
+      text: '所有案場',
       link: '/',
     },
+    ...siteItems,
     {
       level: 0,
       text: '登出',
@@ -67,6 +52,22 @@ const renderMenuContent = (
   ];
 };
 
+const renderHeaderTitle = (
+  urlParams: Params<string>,
+) => {
+  const { siteId, poolId } = urlParams;
+  if (poolId && siteId) {
+    return `${siteId} > ${poolId}`;
+  }
+
+  if (siteId) {
+    return siteId;
+  }
+
+  return '案場總覽';
+};
+
 export default {
   renderMenuContent,
+  renderHeaderTitle,
 };

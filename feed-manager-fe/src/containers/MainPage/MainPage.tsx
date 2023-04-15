@@ -12,6 +12,7 @@ function MainPage() {
   const { loading, error, data: getNavHierarchyResult } = useGetNavHierarchyQuery();
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [menuContent, setMenuContent] = useState<MenuContentItem[]>([]);
+  const [headerTitle, setHeaderTitle] = useState<string>('');
   const toggleSidebar = () => setIsSidebarOpen(!isSidebarOpen);
 
   useEffect(() => {
@@ -30,10 +31,14 @@ function MainPage() {
     }
   }, [logoutResult]);
 
+  useEffect(() => {
+    setHeaderTitle(NavUtils.renderHeaderTitle(params));
+  }, [params]);
+
   return (
     <div className={isSidebarOpen ? 'is-sidebar-on' : ''}>
       <SideBar menuContent={menuContent} />
-      <Header title="案場總覽" isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
+      <Header title={headerTitle} isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
       <Outlet />
     </div>
   );
