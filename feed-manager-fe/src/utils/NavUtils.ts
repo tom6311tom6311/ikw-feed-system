@@ -8,7 +8,8 @@ const renderMenuContent = (
 ) => {
   const { siteId, poolId } = urlParams;
   if (poolId && siteId) {
-    const pools = navHierarchy.find(({ siteId: stId }) => (stId === siteId))?.pools || [];
+    const site = navHierarchy.find(({ siteId: stId }) => (stId === siteId));
+    const pools = site?.pools || [];
     const poolItems = pools
       .map(({ poolId: plId, poolName }) => ({
         level: 1,
@@ -18,7 +19,7 @@ const renderMenuContent = (
     return [
       {
         level: 0,
-        text: '回到案場',
+        text: site?.nameChin || siteId,
         link: `/site/${siteId}/`,
       },
       ...poolItems,
@@ -30,11 +31,10 @@ const renderMenuContent = (
     ];
   }
 
-  const siteIds = navHierarchy.map(({ siteId: stId }) => stId) || [];
-  const siteItems = siteIds
-    .map((stId) => ({
+  const siteItems = navHierarchy
+    .map(({ siteId: stId, nameChin }) => ({
       level: 1,
-      text: stId,
+      text: nameChin,
       link: `/site/${stId}/`,
     }));
   return [
@@ -54,14 +54,18 @@ const renderMenuContent = (
 
 const renderHeaderTitle = (
   urlParams: Params<string>,
+  navHierarchy: GetNavHierarchyQuery['sites'],
 ) => {
   const { siteId, poolId } = urlParams;
   if (poolId && siteId) {
-    return `${siteId} > ${poolId}`;
+    const site = navHierarchy.find(({ siteId: stId }) => (stId === siteId));
+    const pool = site?.pools.find(({ poolId: plId }) => (plId === poolId));
+    return `${site?.nameChin || siteId} > ${pool?.poolName || poolId}`;
   }
 
   if (siteId) {
-    return siteId;
+    const site = navHierarchy.find(({ siteId: stId }) => (stId === siteId));
+    return site?.nameChin || siteId;
   }
 
   return '案場總覽';

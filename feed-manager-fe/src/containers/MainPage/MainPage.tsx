@@ -21,6 +21,7 @@ function MainPage() {
     }
     const { sites: navHierarchy } = getNavHierarchyResult;
     setMenuContent(NavUtils.renderMenuContent(params, navHierarchy, logoutMutation));
+    setHeaderTitle(NavUtils.renderHeaderTitle(params, navHierarchy));
   }, [params, loading, error, getNavHierarchyResult, logoutMutation]);
 
   // remove the session token when logout succeeded
@@ -30,10 +31,6 @@ function MainPage() {
       window.location.replace('/login');
     }
   }, [logoutResult]);
-
-  useEffect(() => {
-    setHeaderTitle(NavUtils.renderHeaderTitle(params));
-  }, [params]);
 
   return (
     <div className={isSidebarOpen ? 'is-sidebar-on' : ''}>

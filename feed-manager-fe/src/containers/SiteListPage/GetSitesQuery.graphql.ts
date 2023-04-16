@@ -5,6 +5,7 @@ const GetSitesQuery = gql`
     sites {
       siteId
       status
+      nameChin
       companyNameChin
       county
       district

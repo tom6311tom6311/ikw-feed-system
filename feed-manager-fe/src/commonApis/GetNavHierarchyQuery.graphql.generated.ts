@@ -6,13 +6,14 @@ const defaultOptions = {} as const;
 export type GetNavHierarchyQueryVariables = Types.Exact<{ [key: string]: never; }>;
 
 
-export type GetNavHierarchyQuery = { __typename?: 'Query', sites: Array<{ __typename?: 'Site', siteId: string, pools: Array<{ __typename?: 'Pool', poolId: string, poolName: string }> }> };
+export type GetNavHierarchyQuery = { __typename?: 'Query', sites: Array<{ __typename?: 'Site', siteId: string, nameChin: string, pools: Array<{ __typename?: 'Pool', poolId: string, poolName: string }> }> };
 
 
 export const GetNavHierarchyDocument = gql`
     query GetNavHierarchy {
   sites {
     siteId
+    nameChin
     pools {
       poolId
       poolName

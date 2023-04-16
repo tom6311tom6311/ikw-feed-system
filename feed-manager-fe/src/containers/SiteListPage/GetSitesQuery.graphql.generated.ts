@@ -6,7 +6,7 @@ const defaultOptions = {} as const;
 export type GetSitesQueryVariables = Types.Exact<{ [key: string]: never; }>;
 
 
-export type GetSitesQuery = { __typename?: 'Query', sites: Array<{ __typename?: 'Site', siteId: string, status: Types.SiteStatus, companyNameChin?: string | null, county: string, district: string }> };
+export type GetSitesQuery = { __typename?: 'Query', sites: Array<{ __typename?: 'Site', siteId: string, status: Types.SiteStatus, nameChin: string, companyNameChin?: string | null, county: string, district: string }> };
 
 
 export const GetSitesDocument = gql`
@@ -14,6 +14,7 @@ export const GetSitesDocument = gql`
   sites {
     siteId
     status
+    nameChin
     companyNameChin
     county
     district
