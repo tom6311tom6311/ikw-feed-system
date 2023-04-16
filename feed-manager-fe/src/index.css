@@ -91,6 +91,10 @@ select {
   scrollbar-width: none; /* Firefox */
 }
 
+.o-sitelist-container-fixed {
+  overflow-y: hidden;
+}
+
 .is-sidebar-on .o-sitelist-container {
   width: 75vw;
   float: right;
@@ -156,9 +160,18 @@ select {
   float: left;
 }
 
+.o-fixed-overview {
+  margin: 50px 20px;
+  width: calc(100% - 40px);
+  height: calc(100vh - 150px);
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+}
+
 .o-siteoverview {
   margin: 20px;
-  margin-top: 80px;
+  margin-top: 50px;
   margin-bottom: 0;
   width: calc(100% - 40px);
   border-radius: 3px;
@@ -316,6 +329,16 @@ select {
   margin: 10px calc(50% - 119px) 40px calc(50% - 119px);
   padding-top: 5px;
   cursor: pointer;
+}
+
+.o-siteoverview__pending {
+  overflow-y: scroll;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.o-siteoverview__pending::-webkit-scrollbar {
+  display: none;
 }
 
 .o-sidebar {
