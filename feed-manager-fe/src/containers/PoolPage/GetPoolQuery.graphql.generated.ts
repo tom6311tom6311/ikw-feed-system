@@ -8,7 +8,7 @@ export type GetPoolQueryVariables = Types.Exact<{
 }>;
 
 
-export type GetPoolQuery = { __typename?: 'Query', pool?: { __typename?: 'Pool', poolId: string, poolName: string, status: Types.PoolStatus, capacity?: number | null, speciesList: Array<string> } | null };
+export type GetPoolQuery = { __typename?: 'Query', pool?: { __typename?: 'Pool', poolId: string, poolName: string, status: Types.PoolStatus, capacity?: number | null, speciesList: Array<string>, cameras: Array<{ __typename?: 'Camera', cameraId: string, cameraName: string }> } | null };
 
 
 export const GetPoolDocument = gql`
@@ -19,6 +19,10 @@ export const GetPoolDocument = gql`
     status
     capacity
     speciesList
+    cameras {
+      cameraId
+      cameraName
+    }
   }
 }
     `;

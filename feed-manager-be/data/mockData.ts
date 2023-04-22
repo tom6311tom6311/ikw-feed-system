@@ -1,4 +1,4 @@
-import { User, Site, Pool, SiteStatus, SiteValidationStatus, PoolStatus } from "../src/generated/graphql";
+import { User, Site, Pool, Camera, SiteStatus, SiteValidationStatus, PoolStatus } from "../src/generated/graphql";
 
 type MockData = {
   users: {
@@ -34,6 +34,24 @@ const pools = {
     status: PoolStatus.Active,
     capacity: 999,
     speciesList: ['加州鱸'],
+    cameras: [
+      {
+        cameraId: 'Cam1',
+        cameraName: '攝像頭1'
+      },
+      {
+        cameraId: 'Cam2',
+        cameraName: '攝像頭2'
+      },
+      {
+        cameraId: 'Cam3',
+        cameraName: '攝像頭3'
+      },
+      {
+        cameraId: 'Cam4',
+        cameraName: '攝像頭4'
+      }
+    ]
   },
   YGDS__2: {
     poolId: 'YGDS__2',
@@ -41,6 +59,16 @@ const pools = {
     status: PoolStatus.Active,
     capacity: 999,
     speciesList: ['加州鱸'],
+    cameras: [
+      {
+        cameraId: 'Cam1',
+        cameraName: '攝像頭1'
+      },
+      {
+        cameraId: 'Cam2',
+        cameraName: '攝像頭2'
+      },
+    ]
   },
   YGDS__3: {
     poolId: 'YGDS__3',
@@ -48,6 +76,7 @@ const pools = {
     status: PoolStatus.Active,
     capacity: 999,
     speciesList: ['加州鱸'],
+    cameras: []
   },
   YGDS__4: {
     poolId: 'YGDS__4',
@@ -55,6 +84,7 @@ const pools = {
     status: PoolStatus.Active,
     capacity: 999,
     speciesList: ['加州鱸'],
+    cameras: []
   },
 };
 

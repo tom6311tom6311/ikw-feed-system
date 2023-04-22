@@ -31,7 +31,6 @@ function SiteStatusPage() {
           poolName={poolName}
           status={status}
           link={`/site/${siteId}/pool/${poolId}`}
-          imageUrl={`${AppConfig.BACKEND.URL}/snapshot/${siteId}/${poolId}?salt=${salt}`}
         />
       ))}
     </div>

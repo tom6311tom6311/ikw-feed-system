@@ -8,6 +8,10 @@ const GetPoolQuery = gql`
       status
       capacity
       speciesList
+      cameras {
+        cameraId
+        cameraName
+      }
     }
   }
 `;

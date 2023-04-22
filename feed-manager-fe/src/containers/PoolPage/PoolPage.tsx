@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
+import { Link, useParams } from 'react-router-dom';
+// import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import AppConfig from '../../const/AppConfig';
 import { useGetPoolQuery } from './GetPoolQuery.graphql.generated';
 
@@ -24,8 +24,8 @@ function PoolPage() {
   }, [salt]);
 
   return (
-    <div className="o-sitelist-container o-sitelist-container-fixed">
-      <div className="o-fixed-overview">
+    <div className="o-sitelist-container">
+      <div className="o-siteoverview">
         <div className="o-siteoverview__head">
           <p className="c-siteoverview__head__text">水池</p>
           <div>
@@ -41,11 +41,26 @@ function PoolPage() {
             <p className="c-siteoverview-info__key">狀態</p>
             <p className="c-siteoverview-info__value">{getPoolData?.pool?.status}</p>
           </div>
+          <div className="o-siteoverview-info">
+            <p className="c-siteoverview-info__key">E-Memo</p>
+            <Link to={`/site/${siteId}/pool/${poolId}/memo`} className="no-link-style">
+              <div className="c-siteoverview-info__value__btn button-primary">進入</div>
+            </Link>
+          </div>
           <div className="o-sitecamera__view">
-            <img src={`${AppConfig.BACKEND.URL}/snapshot/${siteId}/${poolId}?salt=${salt}`} alt="realtime camera view" className="c-sitecamera-img" />
+            {(getPoolData?.pool?.cameras || []).map(({ cameraId, cameraName }) => (
+              <div key={cameraId} className="c-sitecamera-wrapper">
+                <img
+                  src={`${AppConfig.BACKEND.URL}/snapshot/${siteId}/${poolId}/${cameraId}?salt=${salt}`}
+                  alt="realtime camera view"
+                  className="c-sitecamera-img"
+                />
+                <div className="c-sitecamera-name">{cameraName}</div>
+              </div>
+            ))}
           </div>
         </div>
-        <div className="o-siteoverview__pending">
+        {/* <div className="o-siteoverview__pending">
           <VerticalTimeline>
             <VerticalTimelineElement
               className="vertical-timeline-element--work"
@@ -139,7 +154,7 @@ function PoolPage() {
               </p>
             </VerticalTimelineElement>
           </VerticalTimeline>
-        </div>
+        </div> */}
       </div>
     </div>
   );

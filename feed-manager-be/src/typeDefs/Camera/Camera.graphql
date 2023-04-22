@@ -1,0 +1,4 @@
+type Camera {
+  cameraId: String!
+  cameraName: String!
+}

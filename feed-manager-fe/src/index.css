@@ -32,6 +32,10 @@ button:focus {
   box-shadow: none;
 }
 
+.no-link-style {
+  text-decoration: none;
+}
+
 .button-primary {
   padding: 10px 27.5px;
   background-color: #1268B2;
@@ -75,6 +79,7 @@ select {
   height: 50px;
   width: 100vw;
   margin: 0;
+  z-index: 1;
 }
 
 .is-sidebar-on .o-header {
@@ -158,15 +163,6 @@ select {
 
   color: #ffffff;
   float: left;
-}
-
-.o-fixed-overview {
-  margin: 50px 20px;
-  width: calc(100% - 40px);
-  height: calc(100vh - 150px);
-  border-radius: 3px;
-  display: flex;
-  flex-direction: column;
 }
 
 .o-siteoverview {
@@ -266,7 +262,7 @@ select {
 
 .c-siteoverview-info__key {
   float: left;
-  width: calc((50 / 278) * 100%);
+  width: calc((65 / 278) * 100%);
   height: 20px;
   left: 0px;
   margin: 15px 0;
@@ -294,6 +290,10 @@ select {
   align-items: center;
   letter-spacing: 0.01em;
   color: rgba(23, 25, 26, 0.9);
+}
+
+.c-siteoverview-info__value__btn {
+  margin: 10px auto 10px 30px;
 }
 
 .c-siteoverview-info__unit {
@@ -1061,10 +1061,25 @@ select {
 .o-sitecamera__view {
   text-align: center;
   padding: 30px 40px;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: auto auto;
+}
+
+.c-sitecamera-wrapper {
+  position: relative;
+  text-align: center;
+  color: white;
 }
 
 .c-sitecamera-img {
-  max-width: 90%;
+  width: 100%;
+}
+
+.c-sitecamera-name {
+  position: absolute;
+  top: 8px;
+  left: 16px;
 }
 
 .c-tabheader-breadcrumb                                                                                                                                                                                                                                                                                 {
@@ -1270,7 +1285,6 @@ select {
 
   .o-page-container,
   .o-tabheader,
-  .o-sitecamera__view,
   .o-sitecamera                                                                                                                                                                                                                                                                                           {
     width: calc(100vw - 192px);
   }
@@ -1381,6 +1395,7 @@ select {
 
   .o-sitecamera__view {
     padding: 30px calc(9.32% - 13.33px) 30px calc(9.32% - 13.33px);
+    grid-template-columns: auto;
   }
 
   .is-sidebar-on .c-page-divider {

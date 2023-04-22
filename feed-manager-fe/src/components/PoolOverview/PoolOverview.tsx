@@ -6,7 +6,6 @@ type PoolOverviewProps = {
   poolName: string;
   status: PoolStatus;
   link: string;
-  imageUrl: string;
 }
 
 export default function PoolOverview(props: PoolOverviewProps) {
@@ -14,7 +13,6 @@ export default function PoolOverview(props: PoolOverviewProps) {
     poolName,
     status,
     link,
-    imageUrl,
   } = props;
   return (
     <div className="o-siteoverview">
@@ -32,9 +30,9 @@ export default function PoolOverview(props: PoolOverviewProps) {
           <p className="c-siteoverview-info__key">狀態</p>
           <p className="c-siteoverview-info__value">{status}</p>
         </div>
-        <div className="o-sitecamera__view">
+        {/* <div className="o-sitecamera__view">
           <img src={imageUrl} alt="realtime camera view" className="c-sitecamera-img" />
-        </div>
+        </div> */}
       </div>
     </div>
   );

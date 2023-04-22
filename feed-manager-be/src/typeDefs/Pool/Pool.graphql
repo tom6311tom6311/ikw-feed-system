@@ -4,6 +4,7 @@ type Pool {
   status: PoolStatus!
   capacity: Float
   speciesList: [String!]!
+  cameras: [Camera!]!
 }
 
 enum PoolStatus {

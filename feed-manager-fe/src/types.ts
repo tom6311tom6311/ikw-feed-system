@@ -12,6 +12,12 @@ export type Scalars = {
   Float: number;
 };
 
+export type Camera = {
+  __typename?: 'Camera';
+  cameraId: Scalars['String'];
+  cameraName: Scalars['String'];
+};
+
 export type Mutation = {
   __typename?: 'Mutation';
   login?: Maybe<Scalars['String']>;
@@ -26,6 +32,7 @@ export type MutationLoginArgs = {
 
 export type Pool = {
   __typename?: 'Pool';
+  cameras: Array<Camera>;
   capacity?: Maybe<Scalars['Float']>;
   poolId: Scalars['String'];
   poolName: Scalars['String'];

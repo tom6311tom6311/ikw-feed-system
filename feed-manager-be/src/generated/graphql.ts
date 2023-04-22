@@ -14,6 +14,12 @@ export type Scalars = {
   Float: number;
 };
 
+export type Camera = {
+  __typename?: 'Camera';
+  cameraId: Scalars['String'];
+  cameraName: Scalars['String'];
+};
+
 export type Mutation = {
   __typename?: 'Mutation';
   login?: Maybe<Scalars['String']>;
@@ -28,6 +34,7 @@ export type MutationLoginArgs = {
 
 export type Pool = {
   __typename?: 'Pool';
+  cameras: Array<Camera>;
   capacity?: Maybe<Scalars['Float']>;
   poolId: Scalars['String'];
   poolName: Scalars['String'];
@@ -168,6 +175,7 @@ export type DirectiveResolverFn<TResult = {}, TParent = {}, TContext = {}, TArgs
 /** Mapping between all available schema types and the resolvers types */
 export type ResolversTypes = {
   Boolean: ResolverTypeWrapper<Scalars['Boolean']>;
+  Camera: ResolverTypeWrapper<Camera>;
   Float: ResolverTypeWrapper<Scalars['Float']>;
   ID: ResolverTypeWrapper<Scalars['ID']>;
   Mutation: ResolverTypeWrapper<{}>;
@@ -184,6 +192,7 @@ export type ResolversTypes = {
 /** Mapping between all available schema types and the resolvers parents */
 export type ResolversParentTypes = {
   Boolean: Scalars['Boolean'];
+  Camera: Camera;
   Float: Scalars['Float'];
   ID: Scalars['ID'];
   Mutation: {};
@@ -194,12 +203,19 @@ export type ResolversParentTypes = {
   User: User;
 };
 
+export type CameraResolvers<ContextType = any, ParentType extends ResolversParentTypes['Camera'] = ResolversParentTypes['Camera']> = {
+  cameraId?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  cameraName?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
+};
+
 export type MutationResolvers<ContextType = any, ParentType extends ResolversParentTypes['Mutation'] = ResolversParentTypes['Mutation']> = {
   login?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType, RequireFields<MutationLoginArgs, 'email' | 'password'>>;
   logout?: Resolver<Maybe<ResolversTypes['Boolean']>, ParentType, ContextType>;
 };
 
 export type PoolResolvers<ContextType = any, ParentType extends ResolversParentTypes['Pool'] = ResolversParentTypes['Pool']> = {
+  cameras?: Resolver<Array<ResolversTypes['Camera']>, ParentType, ContextType>;
   capacity?: Resolver<Maybe<ResolversTypes['Float']>, ParentType, ContextType>;
   poolId?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   poolName?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
@@ -244,6 +260,7 @@ export type UserResolvers<ContextType = any, ParentType extends ResolversParentT
 };
 
 export type Resolvers<ContextType = any> = {
+  Camera?: CameraResolvers<ContextType>;
   Mutation?: MutationResolvers<ContextType>;
   Pool?: PoolResolvers<ContextType>;
   Query?: QueryResolvers<ContextType>;
