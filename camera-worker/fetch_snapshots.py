@@ -40,8 +40,9 @@ while True:
     for cameraConfig in camerasConfig:
       siteId = cameraConfig['siteId']
       poolId = cameraConfig['poolId']
-      imgPath = f"{SNAPSHOT_DIR_PATH}camera__{siteId}__{poolId}.jpg"
-      print(f"['INFO'] Fetching Camera {siteId} -- {poolId}...")
+      cameraId = cameraConfig['cameraId']
+      imgPath = f"{SNAPSHOT_DIR_PATH}camera__{siteId}__{poolId}__{cameraId}.jpg"
+      print(f"['INFO'] Fetching Camera {siteId} -- {poolId} -- {cameraId}...")
       fetchSucceeded = fetchImageFromCamera(
         cameraConfig,
         imgPath
