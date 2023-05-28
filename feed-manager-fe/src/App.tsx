@@ -16,6 +16,7 @@ import MainPage from './containers/MainPage/MainPage';
 import SiteListPage from './containers/SiteListPage/SiteListPage';
 import SitePage from './containers/SitePage/SitePage';
 import PoolPage from './containers/PoolPage/PoolPage';
+import PoolMemoPage from './containers/PoolMemoPage/PoolMemoPage';
 
 const httpLink = createHttpLink({
   uri: AppConfig.BACKEND.GQL_URL,
@@ -53,6 +54,10 @@ function App() {
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="*" element={<MainPage />}>
+            <Route path="site/:siteId/pool/:poolId/memo">
+              <Route path="*" element={<PoolMemoPage />} />
+              <Route index element={<PoolMemoPage />} />
+            </Route>
             <Route path="site/:siteId/pool/:poolId">
               <Route path="*" element={<PoolPage />} />
               <Route index element={<PoolPage />} />

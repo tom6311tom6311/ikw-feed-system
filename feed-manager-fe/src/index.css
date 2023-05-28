@@ -91,7 +91,7 @@ select {
 .o-sitelist-container {
   height: 100vh;
   overflow-y: scroll;
-  padding: 50px 0 160px 0;
+  padding-top: 50px;
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
@@ -166,9 +166,7 @@ select {
 }
 
 .o-siteoverview {
-  margin: 20px;
-  margin-top: 50px;
-  margin-bottom: 0;
+  margin: 50px 20px 10px 20px;
   width: calc(100% - 40px);
   border-radius: 3px;
 }
@@ -333,12 +331,17 @@ select {
 
 .o-siteoverview__pending {
   overflow-y: scroll;
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+  background-color: #BEDEEC;
 }
 
 .o-siteoverview__pending::-webkit-scrollbar {
   display: none;
+}
+
+.o-pool-memo__wrapper {
+  height: calc(100vh - 110px);
+  display: flex;
+  flex-direction: column;
 }
 
 .o-sidebar {
