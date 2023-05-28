@@ -1606,3 +1606,11 @@ select {
 .report-create-form-section input[type=text]:disabled {
   background-color: rgba(46, 48, 51, 0.05);
 }
+
+.vertical-timeline-element-icon {
+  cursor: pointer;
+}
+
+.vertical-timeline-element-icon:hover {
+  background-color: #002633 !important;
+}

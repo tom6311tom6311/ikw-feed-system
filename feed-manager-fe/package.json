@@ -7,6 +7,9 @@
     "@elastic/datemath": "^5.0.3",
     "@elastic/eui": "^67.1.2",
     "@emotion/react": "^11.8.2",
+    "@fortawesome/fontawesome-svg-core": "^6.4.0",
+    "@fortawesome/free-regular-svg-icons": "^6.4.0",
+    "@fortawesome/react-fontawesome": "^0.2.0",
     "@syncfusion/ej2-react-grids": "^20.3.52",
     "@testing-library/jest-dom": "^5.16.2",
     "@testing-library/react": "^12.1.2",
@@ -61,6 +64,11 @@
     "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
       "prettier --write"
     ]
+  },
+  "babelMacros" : {
+    "fontawesome-svg-core" : {
+      "license": "free"
+    }
   },
   "devDependencies": {
     "@graphql-codegen/cli": "2.6.2",
